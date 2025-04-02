@@ -207,7 +207,7 @@ export const CONTACT_INFO = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    text: "123 Main Street, City",
+    text: "12026 Culebra Rd, San Antonio, TX, 78253",
   },
   {
     icon: (
@@ -226,7 +226,7 @@ export const CONTACT_INFO = [
         />
       </svg>
     ),
-    text: "+123 456 7890",
+    text: "(210) 350-9000 - (210) 993-5577 - (210) 9842774 - (210) 9842873"
   },
   {
     icon: (
@@ -245,14 +245,13 @@ export const CONTACT_INFO = [
         />
       </svg>
     ),
-    text: "info@littleexplorers.com",
+    text: "contact@alphabetzmontessori.com",
   },
 ]
 
 export const SCHEDULE = [
-  { day: "Monday - Friday", hours: "7:00 AM - 7:00 PM" },
-  { day: "Saturday", hours: "8:00 AM - 1:00 PM" },
-  { day: "Sunday", hours: "Closed" },
+  { day: "Monday - Friday", hours: "6:30 AM - 6:30 PM" },
+  { day: "Sat - Sun", hours: "Closed" },
 ]
 
 export const SOCIAL_LINKS = [
@@ -293,6 +292,7 @@ export const SOCIAL_LINKS = [
 export const QUICK_LINKS = [
   { name: "Home", href: "#" },
   { name: "Services", href: "#" },
+  { name: "Benefits", href: "#" },
   { name: "About Us", href: "#" },
   { name: "Gallery", href: "#" },
   { name: "Contact", href: "#" },

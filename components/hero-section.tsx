@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
@@ -6,24 +5,25 @@ export default function HeroSection() {
   return (
     <section className="relative h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/table.jpg"
-          alt="Happy children playing in a safe environment"
-          fill
-          className="object-cover brightness-[0.85]"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="object-cover w-full h-full brightness-[0.85]"
+        >
+          <source src="/alphabetz-full.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            A place where children grow happy
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
+          Develop and learn through fun and creativity
           </h1>
-          <p className="text-lg md:text-xl mb-8 opacity-90">
-            We provide a safe, fun, and educational environment where children develop their full potential while you
-            have peace of mind.
+          <p className="text-base md:text-lg mb-8 ">
+          Alphabetz Montessori is the best Montessori in San Antonio TX. You and your child will love our pleasant early learning and childcare center. Our school is located in a secured area. Your child will be cared for in welcoming surroundings balancing closely with your normal daily routine. We have designed all programs to support your child's all-round development. We are dedicated to delivering the best possible education to them. We have been trusted by many families to provide their children with nature-inspired learning and exceptional care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button

@@ -16,11 +16,11 @@ export default function BenefitsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="relative">
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src="/alphabetz1.gif"
               alt="Children learning with qualified teachers"
               width={800}
               height={600}
-              className="rounded-lg shadow-xl object-cover h-full"
+              className="rounded-lg shadow-xl object-cover h-screen"
             />
             <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-4 rounded-lg shadow-lg">
               <p className="font-bold text-xl">+15 years</p>

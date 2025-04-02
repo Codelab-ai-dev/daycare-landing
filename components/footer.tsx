@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Little Explorers</h3>
+            <h3 className="text-2xl font-bold mb-4">Alphabetz Montessori</h3>
             <p className="mb-6 max-w-md">
               A space designed for the comprehensive development of children, where fun and learning go hand in hand.
             </p>
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Little Explorers. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Alphabetz Montessori. All rights reserved.</p>
         </div>
       </div>
     </footer>

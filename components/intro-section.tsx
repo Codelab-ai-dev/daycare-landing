@@ -7,7 +7,7 @@ export default function IntroSection() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title="Welcome to Little Explorers"
+          title="Welcome to Alphabetz Montessori"
           description="We are more than a daycare. We are a second home where children explore, learn, and grow in a safe and stimulating environment."
         />
 

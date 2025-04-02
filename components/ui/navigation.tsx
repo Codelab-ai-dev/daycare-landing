@@ -36,7 +36,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="#" className="text-2xl font-bold text-primary">
-            Little Explorers
+            <img src="/alphabetz-logo.png" alt="alphabetz" className="w-32" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">

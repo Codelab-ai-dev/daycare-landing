@@ -93,7 +93,7 @@ function ServiceDetail({ service }: ServiceDetailProps) {
 
       <div className="order-1 lg:order-2 relative">
         <div className="aspect-w-2 aspect-h-1 rounded-lg overflow-hidden shadow-xl">
-          <Image src="/diversity.png" alt={service.title} fill className="object-cover" />
+          <img src="/1.png" alt={service.title} className="object-cover w-full h-full" />
         </div>
         <div className="absolute -bottom-6 -left-6 bg-secondary text-secondary-foreground p-4 rounded-lg shadow-lg hidden md:block">
           <p className="font-bold">Certified Program</p>
