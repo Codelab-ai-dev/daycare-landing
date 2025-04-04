@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
@@ -36,6 +38,9 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/20 text-white transition-all duration-300"
+              onClick={() => {
+                document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Discover our services
             </Button>

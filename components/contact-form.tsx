@@ -2,7 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from '@emailjs/browser'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -12,24 +13,34 @@ import { Label } from "@/components/ui/label"
 import { Send, Loader2 } from "lucide-react"
 
 export default function ContactForm() {
+  const form = useRef<HTMLFormElement>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!form.current) return
+
     setIsSubmitting(true)
 
-    // Simulation of form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSuccess(true)
-
-      // Reset the form after 3 seconds
-      setTimeout(() => {
-        setIsSuccess(false)
-        ;(e.target as HTMLFormElement).reset()
-      }, 3000)
-    }, 1500)
+    emailjs.sendForm(
+      'service_tl27hki', // Reemplaza con tu Service ID de EmailJS
+      'template_kzfqi0j', // Reemplaza con tu Template ID de EmailJS
+      form.current,
+      'CKpDmE8kFTilyVEsS' // Reemplaza con tu Public Key de EmailJS
+    )
+      .then(() => {
+        setIsSubmitting(false)
+        setIsSuccess(true)
+        setTimeout(() => {
+          setIsSuccess(false)
+          form.current?.reset()
+        }, 3000)
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+        setIsSubmitting(false)
+      })
   }
 
   if (isSuccess) {
@@ -38,20 +49,20 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form ref={form} onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField id="firstName" label="First Name" placeholder="Your first name" required />
-          <FormField id="lastName" label="Last Name" placeholder="Your last name" required />
+          <FormField id="from_name" name="from_name" label="First Name" placeholder="Your first name" required />
+          <FormField id="lastName" name="lastName" label="Last Name" placeholder="Your last name" required />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField id="email" label="Email" type="email" placeholder="your@email.com" required />
-          <FormField id="phone" label="Phone" type="tel" placeholder="+123 456 7890" required />
+          <FormField id="from_email" name="from_email" label="Email" type="email" placeholder="your@email.com" required />
+          <FormField id="phone_number" name="phone_number" label="Phone" type="tel" placeholder="+123 456 7890" required />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="childAge">Child's Age</Label>
-          <Select>
+          <Select name="childAge">
             <SelectTrigger id="childAge">
               <SelectValue placeholder="Select age" />
             </SelectTrigger>
@@ -68,7 +79,7 @@ export default function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="service">Service of Interest</Label>
-          <Select>
+          <Select name="service">
             <SelectTrigger id="service">
               <SelectValue placeholder="Select a service" />
             </SelectTrigger>
@@ -84,7 +95,7 @@ export default function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="message">Message</Label>
-          <Textarea id="message" placeholder="How can we help you?" rows={4} required />
+          <Textarea id="message" name="message" placeholder="How can we help you?" rows={4} required />
         </div>
 
         <div className="flex items-start space-x-2">
@@ -120,17 +131,18 @@ export default function ContactForm() {
 
 interface FormFieldProps {
   id: string
+  name?: string
   label: string
   placeholder: string
   type?: string
   required?: boolean
 }
 
-function FormField({ id, label, placeholder, type = "text", required = false }: FormFieldProps) {
+function FormField({ id, name, label, placeholder, type = "text", required = false }: FormFieldProps) {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>{label}</Label>
-      <Input id={id} type={type} placeholder={placeholder} required={required} />
+      <Input id={id} name={name || id} type={type} placeholder={placeholder} required={required} />
     </div>
   )
 }
@@ -158,4 +170,3 @@ function SuccessMessage() {
     </div>
   )
 }
-

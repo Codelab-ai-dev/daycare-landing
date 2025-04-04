@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
       "Constant monitoring and communication with parents",
       "Early stimulation activities",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/1.png?height=600&width=800",
     age: "0-2 years",
   },
   {
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
       "Science and discovery activities",
       "Preparation for the transition to school",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/2.png?height=600&width=800",
     age: "3-5 years",
   },
   {
@@ -91,7 +91,7 @@ export const SERVICES: Service[] = [
       "Healthy snacks included",
       "Option of single days or full program",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/3.png?height=600&width=800",
     age: "All ages",
   },
   {
@@ -139,27 +139,27 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Children playing in the recreational area",
-    category: "Play",
+    src: "/fire.jpg",
+    alt: "Learning with Firemen at Alphabetz Montessori",
+    category: "Outdoor",
   },
   {
-    src: "/placeholder.svg?height=600&width=800",
+    src: "/montessory.jpg?height=600&width=800",
     alt: "Painting and art activity",
-    category: "Art",
+    category: "Activities",
   },
   {
-    src: "/placeholder.svg?height=600&width=800",
+    src: "/fire-truck.jpg?height=600&width=800",
     alt: "Reading time with educators",
     category: "Education",
   },
   {
-    src: "/placeholder.svg?height=600&width=800",
+    src: "/hand-painting.jpg?height=600&width=800",
     alt: "Children in outdoor activities",
-    category: "Outdoor",
+    category: "Art",
   },
   {
-    src: "/placeholder.svg?height=600&width=800",
+    src: "/birthday.jpg?height=600&width=800",
     alt: "Birthday celebration",
     category: "Events",
   },

@@ -4,7 +4,6 @@ import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
-import Image from "next/image"
 import { SectionHeader } from "@/components/ui/section-header"
 import { SERVICES } from "@/lib/constants"
 
@@ -26,9 +25,8 @@ export default function ServicesSection() {
                 key={service.id}
                 value={service.id}
                 className={`
-                  data-[state=active]:bg-primary data-[state=active]:text-primary-foreground
-                  h-auto py-4 px-3 rounded-lg flex flex-col items-center gap-2 transition-all
-                  border-2 border-transparent data-[state=active]:border-primary
+                  data-[state=active]:bg-primary/50 data-[state=active]:text-primary-foreground
+                  h-auto py-4 px-3 rounded-lg flex flex-col items-center gap-2 transition-all border-transparent data-[state=active]:border-primary
                 `}
               >
                 <div className="p-3 rounded-full bg-primary/10">{service.icon}</div>
@@ -92,8 +90,8 @@ function ServiceDetail({ service }: ServiceDetailProps) {
       </div>
 
       <div className="order-1 lg:order-2 relative">
-        <div className="aspect-w-2 aspect-h-1 rounded-lg overflow-hidden shadow-xl">
-          <img src="/1.png" alt={service.title} className="object-cover w-full h-full" />
+        <div className="aspect-w-2 aspect-h-2 rounded-lg overflow-hidden shadow-xl">
+          <img src={service.image} alt={service.title} className="object-cover w-full h-full" />
         </div>
         <div className="absolute -bottom-6 -left-6 bg-secondary text-secondary-foreground p-4 rounded-lg shadow-lg hidden md:block">
           <p className="font-bold">Certified Program</p>
